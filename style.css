@@ -12,9 +12,12 @@ h1{
 }
 .list-container{
     list-style:none;
-    display:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     width:100%;
     left:50%;
+    
     & li{
         display:flex;
         align-items:center;
