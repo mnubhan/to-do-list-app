@@ -1,0 +1,22 @@
+*{
+    border:1px dashed red;
+}
+body{
+    margin:20px;
+}
+h1{
+    text-align: center;
+}
+.row{
+    text-align: center;
+}
+.list-container{
+    list-style:none;
+    display:relative;
+    width:100%;
+    left:50%;
+    & li{
+        display:flex;
+        align-items:center;
+    }
+}
