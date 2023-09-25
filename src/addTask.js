@@ -1,15 +1,12 @@
 import { addElements } from "./addElement.js";
 import { setAttributeList } from "./setAttributeList.js";
-import {removeTask} from "./removeTask.js"
-export function addTask() {
-  /* 
-  get the value input by the user in input-box
-  */
-  let task = document.querySelector(".input-box").value;
+import { removeTask } from "./removeTask.js";
+export function addTask(task, inputBoxElement) {
   // create a new p element
   let taskName = document.createElement("p");
   // insert the input value into the p element
-  taskName.innerHTML = task;
+  taskName.innerText = task;
+  inputBoxElement.value="";
   /* 
   create a new svg element by using DOM createElementNS() method
   -createElementNS() is used to create an element with a specified namespace
