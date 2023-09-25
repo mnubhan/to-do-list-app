@@ -1,6 +1,7 @@
 import { addElements } from "./addElement.js";
 import { setAttributeList } from "./setAttributeList.js";
-export function createList(task) {
+export function addList() {
+  let task = document.querySelector(".input-box").value;
   let taskName = document.createElement("p");
   taskName.innerHTML = task;
   let iconUncheckPath = document.createElementNS(

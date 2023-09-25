@@ -1,6 +1,2 @@
-import { createList } from "./addList";
-function addList(){
-  let task = document.querySelector(".input-box").value;
-  createList(task);
-}
-addList();
+import { addList } from "./addList.js";
+window.addList=addList;
