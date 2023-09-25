@@ -1,8 +1,18 @@
 import { addElements } from "./addElement.js";
 import { setAttributeList } from "./setAttributeList.js";
-export function createList(task) {
+import { removeTask } from "./removeTask.js";
+export function addTask(task, inputBoxElement) {
+  // create a new p element
   let taskName = document.createElement("p");
-  taskName.innerHTML = task;
+  // insert the input value into the p element
+  taskName.innerText = task;
+  inputBoxElement.value="";
+  /* 
+  create a new svg element by using DOM createElementNS() method
+  -createElementNS() is used to create an element with a specified namespace
+  -namespace is a labeling system in coding
+  -the namespace for svg is http://www.w3.org/2000/svg
+  */
   let iconUncheckPath = document.createElementNS(
     "http://www.w3.org/2000/svg",
     "path"
@@ -39,7 +49,7 @@ export function createList(task) {
     "svg"
   );
   setAttributeList(iconClosed, {
-    class: "icon-closed",
+    class: "icon-remove-task",
     stroke: "currentColor",
     fill: "currentColor",
     "stroke-width": "0",
@@ -52,4 +62,6 @@ export function createList(task) {
   addElements([iconUncheck, taskName, iconClosed], newList);
   let listContainer = document.querySelector(".list-container");
   addElements([newList], listContainer);
+  iconClosed.addEventListener("click", removeTask);
+  iconClosed.addEventListener("touchStart", removeTask);
 }
