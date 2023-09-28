@@ -2,6 +2,7 @@ import { addElements } from "./addElement.js";
 import { setAttributeList } from "./setAttributeList.js";
 import { removeTask } from "./removeTask.js";
 import { finishTask } from "./finishTask.js";
+import { unFinishTask } from "./unFinishTask.js";
 export function addTask(task, inputBoxElement) {
   // create a new p element
   let taskName = document.createElement("p");
@@ -65,5 +66,7 @@ export function addTask(task, inputBoxElement) {
   addElements([newList], listContainer);
   iconClosed.addEventListener("click", removeTask);
   iconClosed.addEventListener("touchStart", removeTask);
-  iconUncheck.addEventListener("click", finishTask);
+  iconUncheck.addEventListener("click", (e) =>
+    e.target.matches(".icon-uncheck") ? finishTask(e) : unFinishTask(e)
+  );
 }
