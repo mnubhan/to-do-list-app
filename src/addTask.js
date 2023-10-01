@@ -65,7 +65,7 @@ export function addTask(task, inputBoxElement) {
   let listContainer = document.querySelector(".list-container");
   addElements([newList], listContainer);
   iconClosed.addEventListener("click", removeTask);
-  iconClosed.addEventListener("touchStart", removeTask);
+  iconClosed.addEventListener("touchstart", removeTask);
   iconUncheck.addEventListener("click", (e) =>
     e.target.matches(".icon-uncheck") ? finishTask(e) : unFinishTask(e)
   );
