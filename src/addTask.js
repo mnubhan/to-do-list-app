@@ -1,12 +1,14 @@
 import { addElements } from "./addElement.js";
 import { setAttributeList } from "./setAttributeList.js";
 import { removeTask } from "./removeTask.js";
+import { finishTask } from "./finishTask.js";
+import { unFinishTask } from "./unFinishTask.js";
 export function addTask(task, inputBoxElement) {
   // create a new p element
   let taskName = document.createElement("p");
   // insert the input value into the p element
   taskName.innerText = task;
-  inputBoxElement.value="";
+  inputBoxElement.value = "";
   /* 
   create a new svg element by using DOM createElementNS() method
   -createElementNS() is used to create an element with a specified namespace
@@ -63,5 +65,8 @@ export function addTask(task, inputBoxElement) {
   let listContainer = document.querySelector(".list-container");
   addElements([newList], listContainer);
   iconClosed.addEventListener("click", removeTask);
-  iconClosed.addEventListener("touchStart", removeTask);
+  iconClosed.addEventListener("touchstart", removeTask);
+  iconUncheck.addEventListener("click", (e) =>
+    e.target.matches(".icon-uncheck") ? finishTask(e) : unFinishTask(e)
+  );
 }

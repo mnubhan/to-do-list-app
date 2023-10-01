@@ -1,3 +1,3 @@
 export function removeTask(e) {
-  e.target.parentElement.remove();
+  e.target.closest("li").remove();
 }
