@@ -6,6 +6,7 @@ import { unFinishTask } from "./unFinishTask.js";
 export function addTask(task, inputBoxElement) {
   // create a new p element
   let taskName = document.createElement("p");
+  taskName.classList.add("task-name");
   // insert the input value into the p element
   taskName.innerText = task;
   inputBoxElement.value = "";

@@ -6,21 +6,48 @@ body{
 }
 h1{
     text-align: center;
+    font-size:3em;
 }
-.row{
-    text-align: center;
+.add-task-container {
+    width: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    height: 3em;
+    margin: 2em auto;
+    align-items: center;
+    .input-box{
+        width: auto;
+        height: 100%;
+        border-radius: 5px;
+        padding: 0 10px;
+        font-size: 1.2em;
+    }
+    .add-button{
+        width: 3em;
+        height: 100%;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+    
 }
 .list-container{
     list-style:none;
     display:flex;
     flex-direction:column;
     align-items:center;
-    width:100%;
-    left:50%;
-    
+    max-width: 22em;
+    min-width:auto;
+    padding:0;
+    margin: auto;
     & li{
         display:flex;
         align-items:center;
-        transform:translate(-50% ,0);
+        position: relative;
+        margin: 0.5em auto;
+        width: 100%;
+        .task-name {
+            margin: 0 auto 0 3px;
+        }
     }
 }
