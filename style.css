@@ -1,53 +1,87 @@
-*{
-    border:1px dashed red;
+* {
+  border: 1px dashed red;
 }
-body{
-    margin:20px;
+body {
+  margin: 20px;
 }
-h1{
-    text-align: center;
-    font-size:3em;
+h1 {
+  text-align: center;
+  font-size: 3em;
 }
 .add-task-container {
+  width: fit-content;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  height: 2em;
+  margin: 2em auto;
+  align-items: center;
+  .input-box {
     width: auto;
+    height: 100%;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 1em;
+  }
+  .add-button {
+    height: 100%;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+}
+.list-container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 22em;
+  min-width: auto;
+  padding: 0;
+  margin: auto;
+  & li {
     display: flex;
-    flex-flow: row;
-    justify-content: center;
-    height: 3em;
-    margin: 2em auto;
     align-items: center;
-    .input-box{
-        width: auto;
-        height: 100%;
-        border-radius: 5px;
-        padding: 0 10px;
-        font-size: 1.2em;
+    position: relative;
+    margin: 0.5em auto;
+    width: 100%;
+    .task-name {
+      margin: 0 auto 0 3px;
+      font-size: 1.2em;
     }
-    .add-button{
-        width: 3em;
-        height: 100%;
-        font-size: 1.2em;
-        cursor: pointer;
-    }
-    
+  }
 }
-.list-container{
-    list-style:none;
+
+.progress-container {
+  max-width: 22rem;
+  min-width: auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: 3em;
+  margin: 2em auto;
+  .progress-bar {
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 1em;
+    border-radius: 1.5em;
+    color: white;
+    position: relative;
     display:flex;
-    flex-direction:column;
+    flex-flow: row;
     align-items:center;
-    max-width: 22em;
-    min-width:auto;
-    padding:0;
-    margin: auto;
-    & li{
-        display:flex;
-        align-items:center;
-        position: relative;
-        margin: 0.5em auto;
-        width: 100%;
-        .task-name {
-            margin: 0 auto 0 3px;
-        }
+    .progress-percentage{
+      content: "";
+      position: absolute;
+      display: flex;
+      flex-flow:row;
+      justify-content:right;
+      font-size: 0.8em;
+      width: 50%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 1);
+      border-radius: 1.5em;
+      text-align:left;
     }
+  }
 }
+

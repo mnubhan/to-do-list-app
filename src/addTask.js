@@ -45,7 +45,7 @@ export function addTask(task, inputBoxElement) {
   setAttributeList(iconClosedPath, {
     "fill-rule": "evenodd",
     "clip-rule": "evenodd",
-    d: "M7.116 8l-4.558 4.558.884.884L8 8.884l4.558 4.558.884-.884L8.884 8l4.558-4.558-.884-.884L8 7.116 3.442 2.558l-.884.884L7.116 8z",
+    d: "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",
   });
   let iconClosed = document.createElementNS(
     "http://www.w3.org/2000/svg",
@@ -56,9 +56,9 @@ export function addTask(task, inputBoxElement) {
     stroke: "currentColor",
     fill: "currentColor",
     "stroke-width": "0",
-    viewBox: "0 0 16 16",
-    height: "1em",
-    width: "1em",
+    viewBox: "0 0 24 24",
+    height: "100%",
+    width: "2em",
   });
   addElements([iconClosedPath], iconClosed);
   let newList = document.createElement("li");
