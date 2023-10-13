@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/mnubhan/to-do-list-app/issues"
   },
-  "homepage": "https://github.com/mnubhan/to-do-list-app#readme"
+  "homepage": "https://github.com/mnubhan/to-do-list-app#readme",
+  "devDependencies": {
+    "eslint": "^8.51.0"
+  }
 }
