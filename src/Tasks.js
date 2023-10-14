@@ -10,8 +10,13 @@ class Tasks {
     const allTaskData = []
 
     allTask.forEach(taskEle => {
+      const status = taskEle.dataset.taskFinished
       const task = taskEle.querySelector('p')
-      allTaskData.push(task.textContent)
+
+      allTaskData.push({
+        task: task.textContent,
+        isFinished: status === 'true',
+      })
     })
 
     return allTaskData
