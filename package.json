@@ -24,7 +24,6 @@
   "homepage": "https://github.com/mnubhan/to-do-list-app#readme",
   "devDependencies": {
     "eslint": "^8.51.0",
-    "live-server": "^1.2.2",
     "parcel": "^2.10.0"
   }
 }
