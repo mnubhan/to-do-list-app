@@ -21,6 +21,7 @@ class Task {
     )
 
     const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    icon.classList.add('remove-task')
     icon.classList.add('icon-remove-task')
     icon.setAttributeNS(null, 'stroke', 'currentColor')
     icon.setAttributeNS(null, 'fill', 'currentColor')
@@ -30,6 +31,15 @@ class Task {
     icon.setAttributeNS(null, 'width', '1em')
 
     icon.appendChild(path)
+
+    icon.addEventListener('click', function() {
+      const ev = new CustomEvent('delete-task', {
+        detail: 'somedetailshere',
+        bubbles: true,
+      })
+
+      this.dispatchEvent(ev)
+    })
 
     return icon
   }
@@ -56,7 +66,7 @@ class Task {
     return icon
   }
 
-  render(container) {
+  markup() {
     const closeIcon = this._getCloseIcon()
     const uncheckIcon = this._getUncheckIcon()
     const taskEl = this._getTaskParagraph()
@@ -65,8 +75,10 @@ class Task {
     li.appendChild(taskEl)
     li.appendChild(closeIcon)
 
-    container.appendChild(li)
+    return li
   }
+
+  render() { }
 }
 
 export default Task
