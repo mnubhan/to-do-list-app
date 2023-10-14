@@ -53,6 +53,8 @@ class Tasks {
   }
 
   render() {
+    this.container.innerHTML = ''
+
     for (const task of this.tasks) {
       task.render(this.container)
     }

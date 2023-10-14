@@ -1,15 +1,14 @@
-import { addTask } from './addTask.js'
 import tasks from './Tasks.js'
 
 const inputBox = document.querySelector('.input-box')
 inputBox.addEventListener('keyup', e => {
-  e.key === 'Enter' && inputBox.value !== ''
-    ? addTask(inputBox.value, inputBox)
-    : null
+  if (e.key === 'Enter' && inputBox.value.trim() !== '') {
+    tasks.addTask(inputBox.value)
+  }
 })
 const addButton = document.querySelector('.add-button')
 addButton.addEventListener('click', () => {
-  addTask(inputBox.value, inputBox)
+  tasks.addTask(inputBox.value)
 })
 
 const saveButton = document.querySelector('.main-actions--save')
