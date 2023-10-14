@@ -23,3 +23,21 @@ restoreButton.addEventListener('click', tasks.restore.bind(tasks))
 
 const exportButton = document.querySelector('.main-actions--export')
 exportButton.addEventListener('click', tasks.export.bind(tasks))
+
+const uploadInput = document.querySelector('#upload-file')
+const uploadButton = document.querySelector('.main-actions--upload')
+uploadButton.addEventListener('click', () => {
+  uploadInput.click()
+})
+
+uploadInput.addEventListener('change', () => {
+  const file = uploadInput.files[0]
+  const reader = new FileReader()
+
+  reader.onload = e => {
+    tasks.upload(e.target.result)
+    uploadInput.value = null
+  }
+
+  reader.readAsText(file)
+})

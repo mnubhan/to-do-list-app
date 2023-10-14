@@ -20,26 +20,22 @@ class Tasks {
 
   _removeHandler(e) {
     const task = e.target.closest('li')
-    console.log('found task', task)
     if (!task) return
 
     const index = +task.dataset.taskIndex
-    console.log('removing task', index)
     this.removeTask(index)
   }
 
   _toggleHandler(e) {
     const task = e.target.closest('li')
-    console.log('found task', task)
     if (!task) return
 
     const index = +task.dataset.taskIndex
-    console.log('toggling task', index)
     this.toggleTask(index)
   }
 
-  _readData() {
-    const storedTasks = localStorage.getItem(this._storageKey)
+  _readData(tasks = null) {
+    const storedTasks = tasks ?? localStorage.getItem(this._storageKey)
     const parsedTasks = JSON.parse(storedTasks)
 
     const res = parsedTasks.map(task => new Task(task))
@@ -71,6 +67,11 @@ class Tasks {
 
   restore() {
     this.tasks = this._readData()
+    this.render()
+  }
+
+  upload(tasks) {
+    this.tasks = this._readData(tasks)
     this.render()
   }
 

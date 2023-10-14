@@ -52,7 +52,6 @@ class Task {
   _getUncheckIcon() {
     const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 
-    console.log(this.title, this.isFinished)
     if (this.isFinished) {
       const path = document.createElementNS(
         'http://www.w3.org/2000/svg',
