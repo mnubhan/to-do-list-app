@@ -1,8 +1,13 @@
+import Task from './Task'
+
 class Tasks {
   _storageKey = 'todos'
 
   constructor() {
     this.container = document.querySelector('.list-container')
+    this.tasks = this._readData()
+
+    this.render()
   }
 
   _getData() {
@@ -23,16 +28,34 @@ class Tasks {
   }
 
   _readData() {
-    const tasks = localStorage.getItem(this._storageKey)
-    return JSON.parse(tasks)
+    const storedTasks = localStorage.getItem(this._storageKey)
+    const parsedTasks = JSON.parse(storedTasks)
+
+    const res = parsedTasks.map(task => new Task(task.task, task.isFinished))
+    console.log(res)
+    return res
+  }
+
+  addTask(value) {
+    const task = new Task(value)
+    this.tasks.push(task)
+
+    this.render()
   }
 
   restore() {
-    return this._readData()
+    this.tasks = this._readData()
+    this.render()
   }
 
   save() {
     localStorage.setItem(this._storageKey, JSON.stringify(this._getData()))
+  }
+
+  render() {
+    for (const task of this.tasks) {
+      task.render(this.container)
+    }
   }
 }
 
