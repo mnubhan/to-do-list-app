@@ -1,6 +1,6 @@
 class Task {
-  constructor(task, isFinished = false) {
-    this.title = task
+  constructor({ title = '', isFinished = false }) {
+    this.title = title
     this.isFinished = isFinished
   }
 

@@ -10,34 +10,18 @@ class Tasks {
     this.render()
   }
 
-  _getData() {
-    const allTask = this.container.querySelectorAll('li')
-    const allTaskData = []
-
-    allTask.forEach(taskEle => {
-      const status = taskEle.dataset.taskFinished
-      const task = taskEle.querySelector('p')
-
-      allTaskData.push({
-        task: task.textContent,
-        isFinished: status === 'true',
-      })
-    })
-
-    return allTaskData
-  }
-
   _readData() {
     const storedTasks = localStorage.getItem(this._storageKey)
     const parsedTasks = JSON.parse(storedTasks)
 
-    const res = parsedTasks.map(task => new Task(task.task, task.isFinished))
-    console.log(res)
+    const res = parsedTasks.map(task => new Task(task))
     return res
   }
 
   addTask(value) {
-    const task = new Task(value)
+    const task = new Task({
+      title: value,
+    })
     this.tasks.push(task)
 
     this.render()
@@ -49,7 +33,7 @@ class Tasks {
   }
 
   save() {
-    localStorage.setItem(this._storageKey, JSON.stringify(this._getData()))
+    localStorage.setItem(this._storageKey, JSON.stringify(this.tasks))
   }
 
   render() {
