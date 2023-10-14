@@ -9,12 +9,16 @@ class Tasks {
 
     this.container.addEventListener(
       'delete-task',
-      this._deleteHandler.bind(this)
+      this._removeHandler.bind(this)
+    )
+    this.container.addEventListener(
+      'toggle-task',
+      this._toggleHandler.bind(this)
     )
     this.render()
   }
 
-  _deleteHandler(e) {
+  _removeHandler(e) {
     const task = e.target.closest('li')
     console.log('found task', task)
     if (!task) return
@@ -22,6 +26,16 @@ class Tasks {
     const index = +task.dataset.taskIndex
     console.log('removing task', index)
     this.removeTask(index)
+  }
+
+  _toggleHandler(e) {
+    const task = e.target.closest('li')
+    console.log('found task', task)
+    if (!task) return
+
+    const index = +task.dataset.taskIndex
+    console.log('toggling task', index)
+    this.toggleTask(index)
   }
 
   _readData() {
@@ -45,6 +59,13 @@ class Tasks {
     if (index >= this.tasks.length) return
 
     this.tasks = this.tasks.filter((_, ind) => ind !== index)
+    this.render()
+  }
+
+  toggleTask(index) {
+    if (index >= this.tasks.length) return
+
+    this.tasks[index].toggle()
     this.render()
   }
 
