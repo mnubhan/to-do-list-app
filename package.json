@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "A todo list app",
   "main": "src/script.js",
+  "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "PORT=8080 live-server ."
+    "dev": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
