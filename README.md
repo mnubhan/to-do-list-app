@@ -8,6 +8,10 @@ Build to learn main to learn DOM manipulation.
 2. Install dependencies `npm install`
 3. Run development server with `npm run dev`
 
+## Production:
+
+1. Build files with `npm run build`. The assets will be stored in `project_root/dist/`
+
 ## Roadmap:
 
 1. Progress chart
