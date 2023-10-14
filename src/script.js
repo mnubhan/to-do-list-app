@@ -17,3 +17,6 @@ saveButton.addEventListener('click', tasks.save.bind(tasks))
 
 const restoreButton = document.querySelector('.main-actions--restore')
 restoreButton.addEventListener('click', tasks.restore.bind(tasks))
+
+const exportButton = document.querySelector('.main-actions--export')
+exportButton.addEventListener('click', tasks.export.bind(tasks))

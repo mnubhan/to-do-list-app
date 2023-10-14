@@ -78,6 +78,18 @@ class Tasks {
     localStorage.setItem(this._storageKey, JSON.stringify(this.tasks))
   }
 
+  export() {
+    const link = document.createElement('a')
+    link.setAttribute(
+      'href',
+      'data:text/json;charset=utf-8,' +
+        encodeURIComponent(JSON.stringify(this.tasks))
+    )
+    link.setAttribute('download', 'tasks.json')
+    link.click()
+    localStorage.setItem(this._storageKey, JSON.stringify(this.tasks))
+  }
+
   render() {
     this.container.innerHTML = ''
 
