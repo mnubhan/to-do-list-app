@@ -1,26 +1,31 @@
-*{
-    border:1px dashed red;
+body {
+  margin: 20px;
 }
-body{
-    margin:20px;
+h1 {
+  text-align: center;
 }
-h1{
-    text-align: center;
+.row {
+  text-align: center;
 }
-.row{
-    text-align: center;
+.list-container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  left: 50%;
+
+  & li {
+    display: flex;
+    align-items: center;
+    transform: translate(-50%, 0);
+  }
 }
-.list-container{
-    list-style:none;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    width:100%;
-    left:50%;
-    
-    & li{
-        display:flex;
-        align-items:center;
-        transform:translate(-50% ,0);
-    }
+
+.main-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
 }
