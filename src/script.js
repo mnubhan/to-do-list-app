@@ -4,6 +4,7 @@ const inputBox = document.querySelector('.input-box')
 inputBox.addEventListener('keyup', e => {
   if (e.key === 'Enter' && inputBox.value.trim() !== '') {
     tasks.addTask(inputBox.value)
+    inputBox.value = ''
   }
 })
 const addButton = document.querySelector('.add-button')
