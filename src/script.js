@@ -9,7 +9,10 @@ inputBox.addEventListener('keyup', e => {
 })
 const addButton = document.querySelector('.add-button')
 addButton.addEventListener('click', () => {
-  tasks.addTask(inputBox.value)
+  if (inputBox.value.trim() !== '') {
+    tasks.addTask(inputBox.value)
+    inputBox.value = ''
+  }
 })
 
 const saveButton = document.querySelector('.main-actions--save')
