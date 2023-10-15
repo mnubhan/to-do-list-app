@@ -9,12 +9,20 @@
   </head>
   <body>
     <h1>Eat The Frog</h1>
-    <div class="row">
+    <div class="main-actions">
+      <button class="main-actions--save">Save</button>
+      <button class="main-actions--restore">Restore</button>
+      <button class="main-actions--export">Export</button>
+      <button class="main-actions--upload">Upload</button>
       <input
-        type="text"
-        class="input-box"
-        placeholder="Add your text"
+        id="upload-file"
+        type="file"
+        accept="application/json"
+        style="display: none"
       />
+    </div>
+    <div class="row">
+      <input type="text" class="input-box" placeholder="Add your text" />
       <button class="add-button">
         <svg
           stroke="currentColor"

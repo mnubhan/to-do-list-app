@@ -14,7 +14,10 @@ Build to learn main to learn DOM manipulation.
 
 ## Roadmap:
 
-1. Progress chart
-2. Timer for whole to do list
-3. Save to local file
-4. Share it to other through whatsapp
+- [ ] Progress Chart
+- [ ] Timer for whole to do list
+- [x] Save to local file
+- [ ] Task parser & error handling for corrupt file
+- [ ] Component styling
+- [ ] Purge unused files & methods
+- [ ] Share it to other through whatsapp
